@@ -4,7 +4,7 @@ A simple to-do list web application that allows users to add, edit, and delete t
 
 # Technologies
 
-This web application is developed using the PERN (PostgreSQL, Express.js, React.js, Node.js) stack.
+This web application is developed using the PERN stack (PostgreSQL, Express.js, React.js, Node.js).
 
 # How-to-run
 
