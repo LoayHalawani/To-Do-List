@@ -24,13 +24,13 @@ This web application is developed using the PERN (PostgreSQL, Express.js, React.
    - \c todo_db
    - Execute the second query of to-do-list/server/database.sql
 
-3. Set up the backend
+3. Set up the server-side
 
    - cd server
    - npm install
    - node index.js
 
-4. Setup the frontend
+4. Setup the client-side
    - cd client
    - npm install
    - npm start
