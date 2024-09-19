@@ -33,7 +33,7 @@ This web application is developed using the PERN (PostgreSQL, Express.js, React.
 4. Setup the client-side
    - cd client
    - npm install
-   - npm start
+   - npm startd
 5. Access the app
    - Open any browser
    - Navigate to http://localhost:5000
