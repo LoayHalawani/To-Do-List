@@ -1,52 +1,37 @@
 import React, { Fragment, useState } from "react";
 
-const EditTodo = ({ todo }) => {
-  const updateDescription = async (e) => {
-    e.preventDefault();
-    try {
-      const body = { description };
-      await fetch(`http://localhost:5000/todos/${todo.todo_id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
+const EditTodo = ({ todo, updateTodo }) => {
+  const [description, setDescription] = useState(todo.description);
 
-      window.location = "/";
-    } catch (err) {
-      console.error(err);
-    }
+  const updateDescription = (e) => {
+    e.preventDefault();
+    updateTodo(todo.todo_id, description);
   };
 
-  const [description, setDescription] = useState(todo.description);
   return (
     <Fragment>
       <button
         type="button"
-        class="btn btn-warning"
+        className="btn btn-warning"
         data-bs-toggle="modal"
         data-bs-target={`#id${todo.todo_id}`}
       >
         Edit
       </button>
 
-      <div
-        class="modal"
-        id={`id${todo.todo_id}`}
-        onClick={() => setDescription(todo.description)}
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Edit Todo</h4>
+      <div className="modal" id={`id${todo.todo_id}`}>
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h4 className="modal-title">Edit Todo</h4>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
-                onClick={() => setDescription(todo.description)}
               ></button>
             </div>
 
-            <div class="modal-body">
+            <div className="modal-body">
               <input
                 type="text"
                 className="form-control"
@@ -55,20 +40,19 @@ const EditTodo = ({ todo }) => {
               />
             </div>
 
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-warning"
+                className="btn btn-warning"
                 data-bs-dismiss="modal"
-                onClick={(e) => updateDescription(e)}
+                onClick={updateDescription}
               >
                 Edit
               </button>
               <button
                 type="button"
-                class="btn btn-danger"
+                className="btn btn-danger"
                 data-bs-dismiss="modal"
-                onClick={() => setDescription(todo.description)}
               >
                 Close
               </button>

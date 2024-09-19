@@ -53,29 +53,39 @@ app.delete("/todos/:id", async (req, res) => {
   }
 });
 
-//mark a todo as complete
-
-//get all todos
-app.get("/todos", async (req, res) => {
+//mark or un-mark a todo as complete
+app.put("/todos/:id/complete", async (req, res) => {
   try {
-    const allTodos = await pool.query("SELECT * FROM todo");
+    const { id } = req.params;
+    const { is_complete } = req.body;
 
-    res.json(allTodos.rows);
+    const updatedTodo = await pool.query(
+      "UPDATE todo SET is_complete = $1 WHERE todo_id = $2 RETURNING *",
+      [is_complete, id]
+    );
+
+    res.json("Todo status updated successfully!");
   } catch (err) {
     console.error(err.message);
   }
 });
 
-//filter todos(for now)
-app.get("/todos/:complete", async (req, res) => {
+//filter todos
+app.get("/todos", async (req, res) => {
   try {
-    const { complete } = req.params;
-    const completedTodo = await pool.query(
-      "SELECT * FROM todo WHERE complete = $1",
-      [complete]
-    );
+    const { filter } = req.query;
 
-    res.json(completedTodo.rows);
+    let todos;
+
+    if (filter === "complete") {
+      todos = await pool.query("SELECT * FROM todo WHERE is_complete = true");
+    } else if (filter === "active") {
+      todos = await pool.query("SELECT * FROM todo WHERE is_complete = false");
+    } else {
+      todos = await pool.query("SELECT * FROM todo");
+    }
+
+    res.json(todos.rows);
   } catch (err) {
     console.error(err.message);
   }

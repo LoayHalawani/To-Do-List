@@ -2,16 +2,13 @@ import React, { Fragment } from "react";
 
 import "./App.css";
 
-//Components
-import InputTodo from "./components/InputTodo";
-import ListTodo from "./components/ListTodo";
+import TodoList from "./components/TodoList";
 
 function App() {
   return (
     <Fragment>
       <div className="container">
-        <InputTodo />
-        <ListTodo />
+        <TodoList />
       </div>
     </Fragment>
   );
