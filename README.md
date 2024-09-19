@@ -12,14 +12,14 @@ This web application is developed using the PERN (PostgreSQL, Express.js, React.
    - git clone https://github.com/LoayHalawani/To-Do-List.git
    - cd to-do-list
 2. Create the database
-   - Make sure to have PostgreSQL installed.
+   - Make sure to have PostgreSQL installed
    - psql -U postgres
-   - If you face any issues with the previous command, make sure that the "lib" and "bin" folders inside your PostgreSQL installation directory are included in the PATH environment variable.
-   - Enter the password you created when installing PostgreSQL.
-   - If your password is not "password", make sure to replace the value of the password field in to-do-list/server/db.js with your password.
-   - Execute the first line of to-do-list/server/database.sql.
+   - If you face any issues with the previous command, make sure that the "lib" and "bin" folders inside your PostgreSQL installation directory are included in the PATH environment variable
+   - Enter the password you created when installing PostgreSQL
+   - If your password is not "password", make sure to replace the value of the password field in to-do-list/server/db.js with your password
+   - Execute the first line of to-do-list/server/database.sql
    - \c todo_db
-   - Execute the second line of to-do-list/server/database.sql.
+   - Execute the second line of to-do-list/server/database.sql
 3. Set up the backend
    - cd server
    - npm install
