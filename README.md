@@ -36,4 +36,4 @@ This web application is developed using the PERN stack (PostgreSQL, Express.js, 
    - npm start
 5. Access the app
    - Open any browser
-   - Navigate to http://localhost:5000
+   - Navigate to http://localhost:3000
