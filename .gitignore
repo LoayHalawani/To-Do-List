@@ -24,5 +24,5 @@ client/yarn-debug.log*
 client/yarn-error.log*
 
 # server
-# dependecies
+# dependencies
 server/node_modules
