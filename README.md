@@ -2,7 +2,7 @@
 
 A simple to-do list web application that allows users to add, edit, and delete tasks. Additionally, users are able to mark tasks as completed and filter tasks based on their completion status.
 
-# Technologies-Used
+# Technologies
 
 This web application is developed using the PERN stack (PostgreSQL, Express.js, React.js, Node.js).
 
